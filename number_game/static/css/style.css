@@ -3,3 +3,23 @@
     width: 100%;
     text-align: center;
 }
+#lost {
+    margin: 40px auto;
+    padding: 70px 0px 0px 0px;
+    width: 200px;
+    height: 110px;
+    color: #FFF;
+    font-size: 16pt;
+    background-color: #ff0000;
+    border: 1px solid #000;
+}
+#won {
+    margin: 40px auto;
+    padding: 70px 0px 0px 0px;
+    width: 200px;
+    height: 110px;
+    color: #FFF;
+    font-size: 16pt;
+    background-color: #00a100;
+    border: 1px solid #000;
+}

@@ -3,18 +3,42 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-        <title>Great number Gamee</title>
+        <title>Great number Game</title>
     </head>
     <body>
         <div id="wrapper">
             <h1>Welcome to the Great Number Game!</h1>
             <p>I am thinking of a number between 1 and 100.</p>
             <p>Take a guess!</p>
-            <p>{{ session['outcome'] }}</p>
+            {% if session['outcome'] == "You guessed too low!" %}
+            <div id="lost">
+                {{ session['outcome'] }}
+            </div>
             <form action="/guess" method="post">
                 <input type="number" name="guess" placeholder="Guess here!">
                 <input type="submit" name="submit" value="Submit">
             </form>
+            {% elif session['outcome'] == "You guessed too high!" %}
+            <div id="lost">
+                {{ session['outcome'] }}
+            </div>
+            <form action="/guess" method="post">
+                <input type="number" name="guess" placeholder="Guess here!">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+            {% elif session['outcome'] == "was the number :)" %}
+            <div id="won">
+                {{ session['num'] }} {{ session['outcome'] }}
+                <form action="/again">
+                <input type="submit" name="again" value="Play Again!">
+                </form>
+            </div>
+            {% else %}
+            <form action="/guess" method="post">
+                <input type="number" name="guess" placeholder="Guess here!">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+            {% endif %}
         </div>
     </body>
 </html>

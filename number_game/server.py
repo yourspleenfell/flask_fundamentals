@@ -6,20 +6,29 @@ import random
 
 @app.route('/')
 def index():
-    session['num'] = random.randint(1,100)
-    print session['num']
     return render_template('/index.html')
 
 @app.route('/guess', methods=['POST'])
 def guess():
-    guess = int(request.form['guess'])
-    if (session['num'] > guess):
-        session['outcome'] = "You guessed too low! " + str(guess)
-    elif (session['num'] < guess):
-        session['outcome'] = "You guessed too high! " +  str(guess)
+    session['num'] = random.randint(1,100)
+    print session['num']
+    session['guess'] = int(request.form['guess'])
+    if (session['num'] > session['guess']):
+        session['outcome'] = "You guessed too low!"
+        session.pop('guess')
+    elif (session['num'] < session['guess']):
+        session['outcome'] = "You guessed too high!"
+        session.pop('guess')
     elif (session['num'] == session['num']):
-        session['outcome'] = "You gussed the number! The number was " + str(guess) + " :)"
+        session['outcome'] = "was the number :)"
+        session.pop('guess')
     print request.form
+    return redirect('/')
+
+@app.route('/again')
+def play_again():
+    session.pop('num')
+    session['outcome'] = 'none'
     return redirect('/')
 
 app.run(debug=True)
