@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Color Picker</title>
+       <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> -->
+       <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Enter your color values below:</h2>
+            <form action="/bg" method="post">
+                <label for="red">Red: </label><input type="text" name="red">
+                <label for="red">Green: </label><input type="text" name="green">
+                <label for="red">Blue: </label><input type="text" name="blue">
+            </form>
+        </div>
+</html>

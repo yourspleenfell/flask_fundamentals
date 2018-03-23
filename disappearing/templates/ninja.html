@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Disappearing Ninjas</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            {% if ninjacolor == 'none' %}
+            <img src="{{ url_for('static', filename='img/tmnt.png') }}">
+            {% elif ninjacolor == 'red' %}
+                <img src="{{ url_for('static', filename='img/raphael.jpg') }}" alt="Raphael">
+            {% elif ninjacolor == 'blue' %}
+                <img src="{{ url_for('static', filename='img/leonardo.jpg') }}" alt="Leonardo">
+            {% elif ninjacolor == 'orange' %}
+                <img src="{{ url_for('static', filename='img/michelangelo.jpg') }}" alt="Michelangelo">
+            {% elif ninjacolor == 'purple' %}
+                <img src="{{ url_for('static', filename='img/donatello.jpg') }}" alt="Donatello">
+            {% else %}
+                <img src="{{ url_for('static', filename='img/notapril.jpg') }}" alt="Not April">
+            {% endif %}
+        </div>
+</html>

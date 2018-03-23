@@ -1,0 +1,51 @@
+#wrapper {
+    width: 900px;
+    margin: auto;
+}
+p {
+    margin-left: 50px;
+    display: inline-block;
+    width: 150px;
+    line-height: 0px;
+}
+select {
+    width: 200px;
+}
+textarea {
+    margin-left: 48px;
+    resize: none;
+}
+h3 {
+    text-decoration: underline;
+}
+table {
+    margin: 30px;
+}
+#survey {
+    padding: 30px;
+    width: 450px;
+    text-align: left;
+    border: 1px solid #000;
+}
+#name {
+    margin-left: 4px;
+    width: 197px;
+}
+#submit {
+    margin: 15px 0px 0px 305px;
+    padding: 5px;
+    width: 100px;
+    background: linear-gradient(#e5efff, #fff, #e5efff);
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #999;
+}
+#back {
+    margin: 15px 0px 0px 305px;
+    padding: 5px;
+    width: 100px;
+    background: linear-gradient(#e5efff, #fff, #e5efff);
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #999;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>Great number Gamee</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Welcome to the Great Number Game!</h1>
+            <p>I am thinking of a number between 1 and 100.</p>
+            <p>Take a guess!</p>
+            <p>{{ session['outcome'] }}</p>
+            <form action="/guess" method="post">
+                <input type="number" name="guess" placeholder="Guess here!">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
